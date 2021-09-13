@@ -1,3 +1,4 @@
+import ILink from "@/app/Domain/Interfaces/ILink";
 import IModel from "@/app/Domain/Models/IModel";
 import ILinkViewModel from "@/app/Presentation/Interfaces/ILinkViewModel";
 import ILinkDataModel from "../Interfaces/ILinkDataModel";
@@ -15,8 +16,14 @@ export default class LinkModel implements IModel, ILinkDataModel {
     console.log('save link...')
   }
 
-  hydrate(vModel: ILinkViewModel): this {
+  fromViewModel(vModel: ILinkViewModel): this {
     this.attributes['name'] = vModel.name;
+
+    return this;
+  }
+
+  fromEntity(entity: ILink): this {
+    this.attributes['name'] = entity.name;
 
     return this;
   }

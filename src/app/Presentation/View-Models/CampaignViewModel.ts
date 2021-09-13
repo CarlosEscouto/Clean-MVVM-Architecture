@@ -5,7 +5,7 @@ import ICampaignViewModel from '@/app/Presentation/Interfaces/ICampaignViewModel
 import CampaignService from '@/app/Domain/Services/CampaignService';
 import Campaign from '@/app/Domain/Entities/Campaign';
 import CampaignModel from '@/app/Data/Models/CampaignModel';
-import CampaignVMConverter from '../Converter/CampaignVMConverter';
+import CampaignConverter from '../Converter/CampaignConverter';
 
 @Component({
   components: {
@@ -26,7 +26,9 @@ export default class CampaignViewModel extends Vue implements ICampaignViewModel
       console.log('Todos os campos devem ser preenchidos');
     }
 
-    new CampaignService(new CampaignModel()).save(new CampaignVMConverter(new Campaign()).fromCampaignViewModel(this));
+    new CampaignService(new CampaignModel())
+      .save(new CampaignConverter(new Campaign())
+      .fromCampaignViewModel(this));
   }
 
   private validate() {

@@ -1,6 +1,8 @@
-export default interface ILinkViewModel {
+import IViewModel from "./IViewModel";
+
+export default interface ILinkViewModel extends IViewModel {
   name: string;
   url: string;
 
-  save(pro: number): boolean;
+  save(): Promise<this>;
 }
