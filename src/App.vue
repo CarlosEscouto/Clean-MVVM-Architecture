@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <FormGoal />
+    <!-- <FormGoal /> -->
+    <LinkForm />
   </div>
 </template>
 
@@ -8,11 +9,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import FormCampaign from '@/app/Presentation/Views/Campaign/FormCampaign.vue';
 import FormGoal from '@/app/Presentation/Views/Goal/FormGoal.vue';
+import LinkForm from '@/app/Presentation/Views/Link/LinkForm.vue';
 
 @Component({
   components: {
     FormCampaign,
     FormGoal,
+    LinkForm
   },
 })
 export default class App extends Vue {}

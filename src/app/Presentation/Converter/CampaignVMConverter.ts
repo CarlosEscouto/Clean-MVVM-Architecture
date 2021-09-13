@@ -1,7 +1,7 @@
 import ICampaign from '@/app/Domain/Interfaces/ICampaign';
 import ICampaignViewModel from '../Interfaces/ICampaignViewModel';
 
-export default class CampaignTransform {
+export default class CampaignVMConverter {
   constructor(private entity: ICampaign) {}
 
   fromCampaignViewModel(campaignViewModel: ICampaignViewModel): ICampaign {
