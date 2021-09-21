@@ -1,5 +1,32 @@
+/**
+ *
+ *
+ * @export
+ * @interface IModel
+ */
 export default interface IModel {
-  attributes: any;
+  /**
+   *
+   *
+   * @type {*}
+   * @memberof IModel
+   */
+  attributes: Record<string, any>;
+
+  /**
+   *
+   *
+   * @param {string} id
+   * @return {*}  {Promise<this>}
+   * @memberof IModel
+   */
   find(id: string): Promise<this>;
-  save(): Promise<void>;
+
+  /**
+   *
+   *
+   * @return {*}  {Promise<any>}
+   * @memberof IModel
+   */
+  save(): Promise<any>;
 }

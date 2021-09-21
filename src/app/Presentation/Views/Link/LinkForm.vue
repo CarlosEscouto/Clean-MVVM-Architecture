@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" v-model="name" @input="tes">
+    <input type="text" v-model="name" @input="login" />
     <p>{{ name }}</p>
   </div>
 </template>
@@ -15,8 +15,11 @@ import LinkModel from '@/app/Data/Models/LinkModel';
   data: () => new LinkViewModel(new LinkModel()),
 })
 export default class LinkFormController extends Vue {
-  tes() {
-    console.log((this.$data as LinkViewModel).save())
+  private inLoading!: boolean;
+
+  login(): void {
+    console.log(this.$data);
+    console.log((this.$data as LinkViewModel).name);
   }
 }
 </script>
