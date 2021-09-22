@@ -1,7 +1,23 @@
-export default class CampaignModel {
+import IModel from '@/app/Domain/Models/IModel';
+
+/**
+ *
+ *
+ * @export
+ * @class CampaignModel
+ * @implements {IModel}
+ */
+export default class CampaignModel implements IModel {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public attributes: any = {};
 
+  /**
+   *
+   *
+   * @param {string} id
+   * @return {*}  {Promise<this>}
+   * @memberof CampaignModel
+   */
   async find(id: string): Promise<this> {
     if (!id) return this;
 
@@ -13,7 +29,14 @@ export default class CampaignModel {
     return this;
   }
 
-  async save(): Promise<void> {
+  /**
+   *
+   *
+   * @return {*}  {Promise<this>}
+   * @memberof CampaignModel
+   */
+  async save(): Promise<this> {
     console.log('salvando no banco...', this);
+    return this;
   }
 }
